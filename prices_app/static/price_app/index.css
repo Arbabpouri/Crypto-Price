@@ -1,0 +1,466 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;500&display=swap');*/
+
+:root {
+    --c-primary:#03002B;
+    --c-primary-light:#292651;
+    --c-secondary : #00FFFF;
+    --c-white:#fff;
+    --c-gray:#D1D1D1;
+    --c-success:#10F100;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+    outline: none;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-size: 16px;
+    background-color: var(--c-primary);
+    color: var(--c-white);
+    font-family: 'poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+
+/*--------------------Start Scrollbar--------------------------*/
+::-webkit-scrollbar {
+    width: .3rem;
+}
+::-webkit-scrollbar-track {
+    background: var(--c-primary-light);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--c-secondary);
+    border-radius: 1rem;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #2a84a1;
+}
+/*--------------------End Scrollbar--------------------------*/
+
+
+/*--------------------Start Header--------------------------*/
+#header{
+    height: 100vh;
+}
+/*--------------------Start Navbar--------------------------*/
+#header>nav{
+    background-color: var(--c-primary-light);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    padding: 1rem 2rem;
+    z-index: 100;
+}
+
+#header>nav>.icon{
+    font-size: 1.4rem;
+    font-weight: bolder;
+}
+#header>nav>.icon>span{
+    color: var(--c-secondary);
+}
+
+#header>nav>ul{
+    display: flex;
+    gap: 2rem;
+}
+/*--------------------End Navbar--------------------------*/
+#header .container{
+    margin-top: 2rem;
+}
+
+#header .headerContent{
+    width: 80%;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+#header .headerContent .left{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 40%;
+}
+
+#header .headerContent .left h1{
+    font-size: 4.5rem;
+}
+
+#header .headerContent .left h1 span{
+    color: var(--c-secondary);
+}
+
+#header .headerContent .left .description{
+    font-size: larger;
+    width: 60%;
+    text-align: justify;
+}
+
+#header .headerContent .left .searchBox{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem .5rem 1rem 2rem;
+    border-radius: 4rem;
+    background-color: var(--c-primary-light);
+}
+#header .headerContent .left .searchBox input{
+    border: none;
+    background-color: transparent;
+    color: var(--c-white);
+    font-size: 1.8rem;
+}
+#header .headerContent .left .searchBox button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 1px solid var(--c-white);
+    color: var(--c-white);
+    border-radius: 50%;
+    font-size: 3rem;
+    width: 3rem;
+    height: 3rem;
+    transition: all .5s;
+    cursor: pointer;
+}
+#header .headerContent .left .searchBox button:hover{
+    border: 1px solid var(--c-secondary);
+    color: var(--c-secondary);
+}
+
+#header .headerContent .right{
+    width: 60%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#header .headerContent .right > img{
+    height: 75vh;
+    animation: circularImage 15s infinite none;
+    animation-timing-function: linear;
+}
+
+@keyframes circularImage {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+/*--------------------End Header--------------------------*/
+
+/*--------------------Start Main--------------------------*/
+
+main{
+    position: relative;
+}
+
+main .mainContent{
+    width: 70%;
+}
+
+main .mainContent .cryptoSection{
+    margin: 5rem 0;
+}
+
+main .mainContent .cryptoSection h1{
+    color: var(--c-secondary);
+    text-align: center;
+}
+
+
+.cryptoContainer{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+/*--------------------Start Crypto Styles--------------------------*/
+
+.cryptoCard{
+    width: 15rem;
+    background-color: var(--c-primary-light);
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    font-size: 1.2rem;
+    transition: all .3s;
+    cursor: default;
+}
+.cryptoCard:hover{
+    filter: brightness(1.2);
+}
+
+.cryptoCard>.icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cryptoCard>.icon img{
+    width: 8rem;
+    height: 8rem;
+}
+
+.cryptoCard>.name{
+    font-weight: bolder;
+    color: var(--c-gray);
+    width: 100%;
+    overflow-x: clip;
+    text-overflow: ellipsis;
+}
+
+.cryptoCard>.price::after{
+    content: '$';
+    color: var(--c-success);
+    margin-left: .3rem;
+}
+
+.cryptoCard>.priceIncrease{
+    color: var(--c-success);
+}
+
+.cryptoCard>.priceDecrease{
+    color: #ff0000;
+}
+/*--------------------End Crypto Styles--------------------------*/
+
+a#navigateToTop{
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    border: 1px solid var(--c-white);
+    border-radius: 50%;
+    color: var(--c-white);
+    transition: all 1s;
+    visibility: hidden;
+    background-color: var(--c-primary-light);
+}
+a#navigateToTop:hover{
+    color: var(--c-secondary);
+    border-color: var(--c-secondary);
+}
+#navigateToTop>span{
+    font-size: 2.5rem;
+}
+
+/*--------------------End Main--------------------------*/
+
+/*--------------------Start Footer--------------------------*/
+
+footer{
+    display: grid;
+    grid-template-areas: "aboutUs description"
+                         "copyright copyright";
+    row-gap: 2rem;
+    padding: 2rem 5rem;
+    background-color: var(--c-primary-light);
+    justify-content: space-between;
+}
+
+footer .aboutUs{
+    grid-area: aboutUs;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+footer .aboutUs a{
+    color: var(--c-white);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+footer .description{
+    grid-area: description;
+    width: 20vw;
+    min-width: 13rem;
+    text-align: justify;
+    line-height: 2rem;
+}
+footer .copyright{
+    grid-area: copyright;
+    text-align: center;
+}
+
+/*--------------------End Footer--------------------------*/
+
+
+/*///////////////////////// GENERAL STYLES //////////////////////////*/
+
+h1{
+    font-size: 2.5rem;
+}
+
+.container{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.upper{
+    text-transform: uppercase;
+}
+
+.primaryLink{
+    color: var(--c-white);
+    transition: color .7s;
+}
+.primaryLink:hover{
+    color: var(--c-secondary);
+}
+
+
+
+/* TODO: //////////////////////////////// RESPONSIVE //////////////////////////////////////*/
+
+@media screen and (max-width: 1694px){
+    #header .headerContent .left .searchBox input{
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 1366px){
+    #header .headerContent .left{
+        width: 50%;
+    }
+    #header .headerContent .left h1{
+        font-size: 2.5rem;
+    }
+    #header .headerContent .left .description{
+        width: 100%;
+    }
+    #header .headerContent .left .searchBox{
+        width: 100%;
+    }
+    #header .headerContent .right{
+        width: 50%;
+    }
+    #header .headerContent .right img{
+        width: 80%;
+    }
+}
+@media screen and (max-width: 900px){
+    #header .headerContent{
+        width: 90%;
+    }
+    h1{
+        font-size: 1.8rem;
+    }
+    main .mainContent{
+        width: 95%;
+    }
+    .cryptoCard{
+        width: 12rem;
+    }
+}
+
+@media screen and (max-width: 728px){
+    h1{
+        font-size: 1.5rem;
+    }
+    #header .container{
+        margin-top: .8rem;
+    }
+    #header .headerContent{
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        height: 95vh;
+    }
+    #header .headerContent .left{
+        width: 100%;
+        height: 50%;
+        align-items: center;
+    }
+    #header .headerContent .left .description{
+        font-size: 1rem;
+        line-height: 1.5rem;
+        width: 65%;
+    }
+    #header .headerContent .left .searchBox{
+        padding: .5rem;
+        gap: .1rem;
+        width: 65%;
+    }
+    #header .headerContent .right{
+        width: 100%;
+    }
+    #header .headerContent .right img{
+        height: auto;
+        width: 6rem;
+    }
+    footer{
+        display: grid;
+        grid-template-areas: "aboutUs"
+                             "description"
+                             "copyright";
+        row-gap: 2rem;
+        padding: 2rem;
+        background-color: var(--c-primary-light);
+        justify-content: center;
+        color: var(--c-gray);
+    }
+}
+
+@media screen and (max-width: 600px){
+    #header nav .icon{
+        display: none;
+    }
+    #header .headerContent .left h1{
+        font-size: 2rem;
+    }
+
+    a#navigateToTop{
+        bottom: 1rem;
+        right: 1rem;
+    }
+
+}
+
+@media screen and (max-width: 500px){
+    #header .headerContent{
+        width: 95%;
+    }
+    #header .headerContent .left .description{
+        font-size: 1rem;
+        line-height: 1.5rem;
+        width: 85%;
+    }
+    #header .headerContent .left .searchBox{
+        padding: .5rem;
+        gap: .1rem;
+        width: 85%;
+    }
+}
+
+@media screen and (max-width: 370px){
+    #header nav ul li{
+        font-size: .9rem;
+    }
+}
