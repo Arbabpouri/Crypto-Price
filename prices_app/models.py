@@ -5,6 +5,5 @@ from django.db import models
 
 class Symbol(models.Model):
     symbol = models.CharField(max_length=50)
-
-    def __str__(self) -> str:
-        return self.symbol
+    icon = models.TextField(default=None, null=True)
+    is_active = models.BooleanField(null=False)
