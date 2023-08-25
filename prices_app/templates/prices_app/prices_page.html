@@ -1,0 +1,64 @@
+{% extends "shared/_layout.html" %}
+{% load static %}
+{% load render_partial %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% block head %}
+        <link rel="stylesheet"
+              href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+    {% endblock %}
+    {% block title %}Crypto Price{% endblock %}
+</head>
+<body>
+
+{% block content %}
+    {% render_partial 'prices_app.views.header_component' %}
+    <main class="container">
+        <div class="mainContent">
+            <section id="popularCryptos" class="cryptoSection">
+                <h1 class="upper">Popular Cryptos</h1>
+                <div class="cryptoContainer">
+                    {% for coin in coins %}
+                        {% if not coin.is_popular %}
+                            <!-- continue -->
+                        {% else %}
+                            {% if coin.status > 0 %}
+                                coin.status_class = "priceIncrease"
+                            {% else %}
+                                coin.status_class = "priceDecrease"
+                            {% endif %}
+                            {% include "prices_app/price_card.html" with coin=coin %}
+                        {% endif %}
+
+                    {% endfor %}
+
+                </div>
+            </section>
+            <section id="allCryptos" class="cryptoSection">
+                <h1 class="upper">All Cryptos</h1>
+                <div class="cryptoContainer">
+                    {% for coin in coins %}
+                        {% if coin.status > 0 %}
+                            coin.status_class = "priceIncrease"
+                        {% else %}
+                            coin.status_class = "priceDecrease"
+                        {% endif %}
+                        {% include "prices_app/price_card.html" with coin=coin %}
+                    {% endfor %}
+                </div>
+            </section>
+        </div>
+        <a href="#header" id="navigateToTop">
+        <span class="material-symbols-sharp">
+        keyboard_arrow_up
+        </span>
+        </a>
+    </main>
+{% endblock %}
+</body>
+</html>

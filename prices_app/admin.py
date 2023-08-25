@@ -4,9 +4,9 @@ from . import models
 
 
 class SymbolAdmin(admin.ModelAdmin):
-    list_display = ["id", "symbol", "is_active", "icon"]
-    list_editable = ["symbol", "is_active", "icon"]
-    list_filter = ["is_active"]
+    list_display = ["id", "symbol", "is_popular", "icon"]
+    list_editable = ["symbol", "is_popular", "icon"]
+    list_filter = ["is_popular"]
     search_fields = ["symbol"]
     ordering = ["id"]
 

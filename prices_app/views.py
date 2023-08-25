@@ -19,7 +19,8 @@ class BinanceGetPriceChangePercentSend(BaseModel):
     symbol: str
 
 
-class BinanceGetPriceChangePercentResponse(BinanceGetPriceChangePercentSend):
+class BinanceGetPriceChangePercentResponse(BaseModel):
+    symbol: str
     code: Union[int, None] = None
     msg: Union[int, None] = None
     priceChangePercent: str = None
@@ -65,6 +66,9 @@ class CoinTools:
             return response.priceChangePercent
         return "Try again"
 
+    def get_coin(self):
+        pass
+
 
 def prices(request):
     context = {
@@ -72,6 +76,14 @@ def prices(request):
     }
     return render(
         request=request,
-        template_name='price_app/prices_page.html',
+        template_name='prices_app/prices_page.html',
         context=context
     )
+
+
+def footer_component(request):
+    return render(request, "shared/footer_component.html")
+
+
+def header_component(request):
+    return render(request, "shared/header_component.html")

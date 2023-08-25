@@ -1,0 +1,31 @@
+{% load static %}
+<header id="header">
+    <nav>
+        <div class="icon upper"><span>Crypto</span>Price</div>
+        <ul class="menu">
+            <li><a class="primaryLink" href="#popularCryptos">Popular</a></li>
+            <li><a class="primaryLink" href="#allCryptos">All Cryptos</a></li>
+            <li><a class="primaryLink" href="#aboutUs">About Us</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="headerContent">
+            <div class="left">
+                <h1 class="upper"><span>Crypto</span>price</h1>
+                <p class="description">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aliquid corporis fuga illum
+                    quibusdam quisquam veniam? Ipsum itaque temporibus voluptatum.
+                </p>
+                <form class="searchBox" action="" method="get">
+                    <input placeholder="search a coin..."/>
+                    <button id="searchButton">
+                        <span class="material-symbols-sharp">search</span>
+                    </button>
+                </form>
+            </div>
+            <div class="right">
+                <img src="{% static 'images/crypto.svg' %}" alt="Crypto Icons">
+            </div>
+        </div>
+    </div>
+</header>
