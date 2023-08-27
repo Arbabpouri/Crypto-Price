@@ -1,8 +1,8 @@
 <div class="cryptoCard">
     <div class="icon">
-        <img src="{{ coin.icon }}" alt="icon">
+        <img src=data:image/png;base64,{{ coin.icon }} alt="icon">
     </div>
     <p class="name">{{ coin.name }}</p>
     <p class="price">{{ coin.price }}</p>
-    <p class={{ coin.status_class }}>{{ coin.status }}</p> <!-- priceIncrease  priceDecrease -->
+    <p class={{ coin.status_class }}>{{ coin.price_status }}</p> <!-- priceIncrease  priceDecrease -->
 </div>

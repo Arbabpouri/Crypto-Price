@@ -24,30 +24,16 @@
                 <h1 class="upper">Popular Cryptos</h1>
                 <div class="cryptoContainer">
                     {% for coin in coins %}
-                        {% if not coin.is_popular %}
-                            <!-- continue -->
-                        {% else %}
-                            {% if coin.status > 0 %}
-                                coin.status_class = "priceIncrease"
-                            {% else %}
-                                coin.status_class = "priceDecrease"
-                            {% endif %}
+                        {% if coin.is_popular %}
                             {% include "prices_app/price_card.html" with coin=coin %}
                         {% endif %}
-
                     {% endfor %}
-
                 </div>
             </section>
             <section id="allCryptos" class="cryptoSection">
                 <h1 class="upper">All Cryptos</h1>
                 <div class="cryptoContainer">
                     {% for coin in coins %}
-                        {% if coin.status > 0 %}
-                            coin.status_class = "priceIncrease"
-                        {% else %}
-                            coin.status_class = "priceDecrease"
-                        {% endif %}
                         {% include "prices_app/price_card.html" with coin=coin %}
                     {% endfor %}
                 </div>
