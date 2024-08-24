@@ -1,6 +1,9 @@
-# Crypto Price
-****
-**A simple site to display coins.**<br>
-**please give me star:star:**<br>
+# 📈 Currency Prices Using Django Template Engine
 
-Thanks to my dear Mohammad Amin for designing the Front-End: https://github.com/M-A-Felegari
+Welcome to our website! This project is a **Template Engine** built with **Django** that displays currency prices along with their respective icons and percentage changes.
+
+## 🚀 Features
+
+- **Live Currency Prices**: The current prices of currencies are displayed live.
+- **Beautiful Icons**: Each currency is displayed with its specific icon.
+- **Percentage Change**: The percentage changes in the price of each currency compared to the previous day are shown.
